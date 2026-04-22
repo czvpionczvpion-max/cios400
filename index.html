@@ -140,62 +140,72 @@
             backdrop-filter: blur(4px);
         }
 
-        .counter-premium {
-            max-width: 550px;
+        .counters-double {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
             margin: 0 auto 50px auto;
+        }
+        
+        .counter-premium-single {
+            flex: 1;
+            min-width: 280px;
             background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(10,20,5,0.8));
             backdrop-filter: blur(12px);
             border-radius: 70px;
             padding: 5px;
             border: 1px solid rgba(159, 252, 1, 0.5);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(159,252,1,0.2);
+            transition: all 0.3s ease;
         }
         
-        .counter-inner {
+        .counter-premium-single:hover {
+            transform: translateY(-3px);
+            border-color: #9ffc01;
+            box-shadow: 0 20px 35px rgba(159,252,1,0.3);
+        }
+        
+        .counter-inner-single {
             background: rgba(0,0,0,0.6);
             border-radius: 65px;
-            padding: 20px 25px;
+            padding: 20px 20px;
             text-align: center;
             backdrop-filter: blur(4px);
         }
         
-        .counter-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #9ffc01;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-                .counter-label2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-                .counter-label3 {
-            font-size: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 12px;
+        .badge-amount {
+            display: inline-block;
+            background: linear-gradient(135deg, #9ffc01, #6bb300);
+            color: #0a0a0a;
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 5px 20px;
+            border-radius: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
-        .counter-number-wrapper {
+        .counter-label-single {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9ffc01;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .counter-number-wrapper-single {
             display: flex;
             align-items: baseline;
             justify-content: center;
             gap: 8px;
-            flex-wrap: wrap;
+            margin: 5px 0;
         }
         
-        .counter-number {
-            font-size: 4rem;
+        .counter-number-single {
+            font-size: 3.2rem;
             font-weight: 900;
             background: linear-gradient(135deg, #9ffc01, #eaffa0);
             -webkit-background-clip: text;
@@ -203,42 +213,55 @@
             color: transparent;
             text-shadow: 0 0 30px rgba(159,252,1,0.5);
             font-family: monospace;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
         }
         
-        .counter-max {
-            font-size: 1.6rem;
+        .counter-max-single {
+            font-size: 1.4rem;
             font-weight: 700;
             color: rgba(255,255,255,0.5);
         }
         
-        .counter-text {
-            font-size: 0.8rem;
+        .counter-text-single {
+            font-size: 0.75rem;
             color: #ccc;
-            margin-top: 12px;
+            margin-top: 8px;
             border-top: 1px dashed rgba(159,252,1,0.3);
-            padding-top: 12px;
+            padding-top: 10px;
             display: inline-block;
         }
         
-        .counter-progress {
-            width: 80%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            margin: 18px auto 0;
+        .counter-progress-single {
+            width: 90%;
+            height: 6px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            margin: 16px auto 0;
             overflow: hidden;
         }
         
-        .counter-progress-bar {
+        .counter-progress-bar-single {
             height: 100%;
             background: linear-gradient(90deg, #9ffc01, #d4ff8c);
             width: 100%;
-            border-radius: 4px;
-            transition: width 0.5s ease;
+            border-radius: 10px;
+            transition: width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 0 8px rgba(159,252,1,0.5);
         }
-
-        /* NOWE ELEGANCKIE BOXY +400 PLN Z LOGAMI I KODEM CIOS */
+        
+        .promo-date-text {
+            font-size: 0.7rem;
+            color: rgba(159, 252, 1, 0.7);
+            margin-top: 14px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            backdrop-filter: blur(2px);
+        }
+        
         .bonus-showcase {
             margin: 30px 0 20px;
         }
@@ -396,7 +419,6 @@
             background: linear-gradient(135deg, #b5ff2e, #7ed200);
         }
 
-        /* LINIA ROZDZIELAJĄCA - ELEGANCKI PRZEDZIAŁEK */
         .divider-glow {
             width: 100%;
             display: flex;
@@ -411,14 +433,7 @@
             border-radius: 3px;
             box-shadow: 0 0 12px rgba(159,252,1,0.5);
         }
-        .divider-icon {
-            margin: 0 18px;
-            color: #9ffc01;
-            font-size: 1.5rem;
-            text-shadow: 0 0 8px #9ffc01;
-        }
 
-        /* Sekcja zasad */
         .rules-section {
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(8px);
@@ -483,12 +498,13 @@
 
         @media (max-width: 768px) {
             .promo-title { font-size: 2.2rem; }
-            .counter-number { font-size: 2.8rem; letter-spacing: 3px; }
-            .counter-max { font-size: 1.3rem; }
+            .counter-number-single { font-size: 2.4rem; letter-spacing: 2px; }
+            .counter-max-single { font-size: 1.2rem; }
             .rules-section { padding: 25px; }
             .bonus-icon { width: 75px; height: 75px; }
             .bonus-name { font-size: 1.3rem; }
             .divider-line { width: 50%; }
+            .counters-double { gap: 20px; }
         }
 
         .live-status-container {
@@ -545,33 +561,48 @@
 
     <div class="promo-main">
         <div class="promo-container">
-            <h1 class="promo-title">DOSTAŃ <span>WARTOŚĆ WPŁĄTY</span><br>OD MRCIOSA!</h1>
+            <h1 class="promo-title">DOSTAŃ <span>WARTOŚĆ WPŁATY</span><br>OD MRCIOSA!</h1>
             <div class="promo-subtitle">
                 Wpłać minimum 400 PLN LUB 200 PLN na jedno z poniższych kasyn, a ja dorzucam Ci WARTOŚĆ WPŁATY extra. Tylko dla pierwszych 100 osób!
             </div>
 
-            <div class="counter-premium">
-                <div class="counter-inner">
-                    <div class="counter-label">PROMOCJA TRWA TYLKO:</div>
-                    <div class="counter-label2">OD 22.04 - DO 05.05</div>
-                    <div class="counter-label3">LICZĄ SIĘ WPŁATY TYLKO W TYCH DATACH!</div>
-                    <div class="counter-label3">50x 200PLN - 50x 400PLN</div>
-                    <div class="counter-number-wrapper">
-                        <span class="counter-number" id="placesCounter">100</span>
-                        <span class="counter-max">/ 100</span>
+            <div class="counters-double">
+                <div class="counter-premium-single">
+                    <div class="counter-inner-single">
+                        <div class="badge-amount">200 PLN</div>
+                        <div class="counter-label-single">POZOSTAŁO MIEJSC</div>
+                        <div class="counter-number-wrapper-single">
+                            <span class="counter-number-single" id="placesCounter200">50</span>
+                            <span class="counter-max-single">/ 50</span>
+                        </div>
+                        <div class="counter-text-single">WPŁATA 200 PLN → +200 PLN EXTRA</div>
+                        <div class="counter-progress-single">
+                            <div class="counter-progress-bar-single" id="progressBar200" style="width: 100%"></div>
+                        </div>
+                        <div class="promo-date-text">📅 PROMOCJA TRWA: 22.04 - 05.05</div>
                     </div>
-                    <div class="counter-text">POZOSTAŁO MIEJSC</div>
-                    <div class="counter-progress">
-                        <div class="counter-progress-bar" id="progressBar" style="width: 100%"></div>
+                </div>
+
+                <div class="counter-premium-single">
+                    <div class="counter-inner-single">
+                        <div class="badge-amount">400 PLN</div>
+                        <div class="counter-label-single">POZOSTAŁO MIEJSC</div>
+                        <div class="counter-number-wrapper-single">
+                            <span class="counter-number-single" id="placesCounter400">50</span>
+                            <span class="counter-max-single">/ 50</span>
+                        </div>
+                        <div class="counter-text-single">WPŁATA 400 PLN → +400 PLN EXTRA</div>
+                        <div class="counter-progress-single">
+                            <div class="counter-progress-bar-single" id="progressBar400" style="width: 100%"></div>
+                        </div>
+                        <div class="promo-date-text">📅 PROMOCJA TRWA: 22.04 - 05.05</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4 ELEGANCKIE BOXY BONUSOWE Z LOGAMI + KOD CIOS +400 PLN -->
             <div class="bonus-showcase">
                 <div class="bonus-grid">
-                    <!-- BONUS 1: spinbara.png -->
-                    <div class="bonus-card" data-bonus-name="SpinBara">
+                    <div class="bonus-card">
                         <div class="badge-plus">PROMOCJA</div>
                         <div class="bonus-icon">
                             <img src="./spinbara.png" alt="SpinBara" onerror="this.src='https://placehold.co/90x90/1a1a1a/9ffc01?text=SPIN'">
@@ -579,21 +610,19 @@
                         <div class="bonus-name">SPINBARA</div>
                         <div class="bonus-code"><span>KOD:</span> CIOS</div>
                         <div class="bonus-desc">PAMIĘTAJ ABY UŻYĆ KODU PODCZAS REJESTRACJI!</div>
-                        <a href="https://spnbr.monalvor.com/?mid=260177_1711723" class="btn-bonus-claim" data-platform="SpinBara" data-code="CIOS" data-link="https://spinbara.com/promo/mrcios" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
+                        <a href="https://spnbr.monalvor.com/?mid=260177_1711723" class="btn-bonus-claim" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
                     </div>
-                    <!-- BONUS 2: dudespin.png -->
-                    <div class="bonus-card" data-bonus-name="DudeSpin">
+                    <div class="bonus-card">
                         <div class="badge-plus">PROMOCJA</div>
                         <div class="bonus-icon">
-                            <img src="./malinacasino.svg" alt="DudeSpin" onerror="this.src='https://placehold.co/90x90/1a1a1a/9ffc01?text=DUDE'">
+                            <img src="./malinacasino.svg" alt="MalinaCasino" onerror="this.src='https://placehold.co/90x90/1a1a1a/9ffc01?text=MALINA'">
                         </div>
                         <div class="bonus-name">MALINACASINO</div>
                         <div class="bonus-code"><span>KOD:</span> CIOS</div>
                         <div class="bonus-desc">PAMIĘTAJ ABY UŻYĆ KODU PODCZAS REJESTRACJI!</div>
-                        <a href="https://mlncur.lynnar.com/?mid=364828_2105215" class="btn-bonus-claim" data-platform="DudeSpin" data-code="CIOS" data-link="https://dudespin.com/promo/mrcios" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
+                        <a href="https://mlncur.lynnar.com/?mid=364828_2105215" class="btn-bonus-claim" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
                     </div>
-                    <!-- BONUS 3: robocat.webp -->
-                    <div class="bonus-card" data-bonus-name="RoboCat">
+                    <div class="bonus-card">
                         <div class="badge-plus">PROMOCJA</div>
                         <div class="bonus-icon">
                             <img src="./robocat.webp" alt="RoboCat" onerror="this.src='https://placehold.co/90x90/1a1a1a/9ffc01?text=CAT'">
@@ -601,10 +630,9 @@
                         <div class="bonus-name">ROBOCAT</div>
                         <div class="bonus-code"><span>KOD:</span> CIOS</div>
                         <div class="bonus-desc">PAMIĘTAJ ABY UŻYĆ KODU PODCZAS REJESTRACJI!</div>
-                        <a href="https://rbct.lynmonkel.com/?mid=353262_2114126" class="btn-bonus-claim" data-platform="RoboCat" data-code="CIOS" data-link="https://robocat.com/promo/mrcios" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
+                        <a href="https://rbct.lynmonkel.com/?mid=353262_2114126" class="btn-bonus-claim" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
                     </div>
-                    <!-- BONUS 4: SPINANGA.webp -->
-                    <div class="bonus-card" data-bonus-name="Spinanga">
+                    <div class="bonus-card">
                         <div class="badge-plus">PROMOCJA</div>
                         <div class="bonus-icon">
                             <img src="./SPINANGA.webp" alt="Spinanga" onerror="this.src='https://placehold.co/90x90/1a1a1a/9ffc01?text=SPINANGA'">
@@ -612,17 +640,15 @@
                         <div class="bonus-name">SPINANGA</div>
                         <div class="bonus-code"><span>KOD:</span> CIOS</div>
                         <div class="bonus-desc">PAMIĘTAJ ABY UŻYĆ KODU PODCZAS REJESTRACJI!</div>
-                        <a href="https://spng.lynmonkel.com/?mid=348501_2113152" class="btn-bonus-claim" data-platform="Spinanga" data-code="CIOS" data-link="https://spinanga.com/promo/mrcios" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
+                        <a href="https://spng.lynmonkel.com/?mid=348501_2113152" class="btn-bonus-claim" target="_blank" rel="noopener noreferrer">AKTYWUJ PROMOCJĘ</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ELEGANCKI PRZEDZIAŁEK (linia z ikoną) -->
             <div class="divider-glow">
                 <div class="divider-line"></div>
             </div>
 
-            <!-- SEKCJA ZASAD JAK OTRZYMAĆ 400 PLN -->
             <div class="rules-section">
                 <div class="rules-title">
                     <span>• REGULAMIN PROMOCJI</span>
@@ -632,7 +658,8 @@
                     <li>Zarejestruj się przez dedykowany link i wpisz KOD CIOS a następnie wpłać 400PLN LUB 200PLN</li>
                     <li>Po wpłacie skontaktuj się ze mną na INSTAGRAM @mr_cios "WYŚLIJ POTWIERDZENIE WPŁATY + AKCJAPROMO"</li>
                     <li>Otrzymasz dodatkowe 400 PLN lub 200 PLN ode mnie w ciągu 24h – BLIK na konto w kasynie!</li>
-                    <li>Oferta ważna tylko dla pierwszych 100 uczestników – liczy się kolejność zgłoszeń!</li>
+                    <li>Oferta ważna tylko dla pierwszych 100 uczestników – liczy się kolejność zgłoszeń! (50 miejsc na 200PLN / 50 miejsc na 400PLN)</li>
+                    <li><strong>📅 PROMOCJA TRWA OD 22.04 DO 05.05</strong> – liczą się tylko wpłaty dokonane w tym okresie!</li>
                 </ul>
                 <p style="margin-top: 25px; color: #ffee00; font-size: 0.8rem; text-align: center;">⚠️ UWAGA: To nie jest bonus depozytowy od kasyna, tylko DODATKOWA nagroda ode mnie osobiście. Limit 1 pakiet na osobę. Kod CIOS daje dodatkowe korzyści w każdym kasynie.</p>
             </div>
@@ -646,70 +673,72 @@
     </footer>
 
     <script>
-        // Licznik miejsc (localStorage) - wyświetlanie pozostałych miejsc, ale bez blokowania linków
-        let remainingPlaces = localStorage.getItem('mrcios_promo_places');
-        if (remainingPlaces === null) {
-            remainingPlaces = 100;
-            localStorage.setItem('mrcios_promo_places', remainingPlaces);
-        } else {
-            remainingPlaces = parseInt(remainingPlaces);
-        }
-
-        const counterSpan = document.getElementById('placesCounter');
-        const progressBar = document.getElementById('progressBar');
+        // ================================================================
+        // ⬇️⬇️⬇️ TUTAJ ZMIEŃ WARTOŚCI POCZĄTKOWE LICZNIKÓW ⬇️⬇️⬇️
+        // ================================================================
+        // START_200 - początkowa ilość wolnych miejsc dla wpłat 200 PLN (max 50)
+        // START_400 - początkowa ilość wolnych miejsc dla wpłat 400 PLN (max 50)
+        //
+        // PRZYKŁADY:
+        //   START_200 = 30   (wtedy licznik pokaże 30/50)
+        //   START_400 = 45   (wtedy licznik pokaże 45/50)
+        // ================================================================
         
-        function updateCounterUI() {
-            if (counterSpan) counterSpan.innerText = remainingPlaces;
-            if (progressBar) {
-                const percent = (remainingPlaces / 100) * 100;
-                progressBar.style.width = percent + '%';
+        const START_200 = 38;   // ← zmień tutaj na np. 30, 25, 40 itd.
+        const START_400 = 46;   // ← zmień tutaj na np. 30, 25, 40 itd.
+        
+        // ================================================================
+        // UWAGA: Poniższego kodu NIE MODYFIKUJ, chyba że wiesz co robisz.
+        // Liczniki automatycznie zapisują stan w localStorage przeglądarki.
+        // Aby zresetować do wartości START_200/START_400, wyczyść localStorage.
+        // ================================================================
+        
+        let remaining200 = localStorage.getItem('mrcios_200_places');
+        if (remaining200 === null) {
+            remaining200 = START_200;
+            localStorage.setItem('mrcios_200_places', remaining200);
+        } else {
+            remaining200 = parseInt(remaining200);
+            if (isNaN(remaining200)) remaining200 = START_200;
+            if (remaining200 < 0) remaining200 = 0;
+            if (remaining200 > 50) remaining200 = 50;
+        }
+        
+        let remaining400 = localStorage.getItem('mrcios_400_places');
+        if (remaining400 === null) {
+            remaining400 = START_400;
+            localStorage.setItem('mrcios_400_places', remaining400);
+        } else {
+            remaining400 = parseInt(remaining400);
+            if (isNaN(remaining400)) remaining400 = START_400;
+            if (remaining400 < 0) remaining400 = 0;
+            if (remaining400 > 50) remaining400 = 50;
+        }
+        
+        const counter200Span = document.getElementById('placesCounter200');
+        const progressBar200 = document.getElementById('progressBar200');
+        const counter400Span = document.getElementById('placesCounter400');
+        const progressBar400 = document.getElementById('progressBar400');
+        
+        function updateCounter200() {
+            if (counter200Span) counter200Span.innerText = remaining200;
+            if (progressBar200) {
+                const percent = (remaining200 / 50) * 100;
+                progressBar200.style.width = percent + '%';
             }
         }
-        updateCounterUI();
-
-        // Funkcja zmniejszająca licznik (zapis w localStorage) - będzie wywoływana tylko przy pierwszym kliknięciu danej sesji? 
-        // Aby nie blokować kliknięć, ale zachować możliwość odnotowania, że ktoś skorzystał (ale żeby nie blokować ponownych kliknięć)
-        // Według wymagania: "popraw to ze da sie caly czas i nic wiecej nie ruszaj" => znaczy, że linki mają działać za każdym razem, 
-        // NIE MOŻE BYĆ BLOKADY PO KLIKNIĘCIU. Wcześniejszy kod zawierał blokadę poprzez userClaimed i remainingPlaces <=0.
-        // Usuwamy całkowicie warunki blokujące. Każde kliknięcie otwiera link, a licznik miejsc pozostaje wizualny (nie wpływa na akcję).
-        // Jednak aby zachować spójność, nie będziemy nawet zmniejszać licznika przy kliknięciu, ponieważ użytkownik może klikać wielokrotnie
-        // i licznik nie powinien się zmieniać w sposób niekontrolowany. Proponuję: pozostawiamy licznik jako statyczny element informacyjny 
-        // (np. pokazuje początkową pulę 100, nie zmienia się po kliknięciu). Ale jeśli chcesz zachować zmniejszanie przy pierwszym kliknięciu,
-        // a późniejsze kliknięcia nie blokują i nie zmieniają licznika? Według "da sie kliknac juz 2x w te linki od bonusu" => brak blokady,
-        // każdy link zawsze działa. Najlepiej usunąć jakąkolwiek ingerencję w zdarzenia kliknięcia. Po prostu pozostawić <a> z href, bez dodatkowego JS.
-        // W związku z tym usuwamy nasłuchiwanie eventów, które blokowały lub modyfikowały kliknięcia. Licznik pozostaje wizualny.
-        // Dodatkowo usuwamy zmienne userClaimed i warunki. Żeby linki działały zawsze, normalnie.
         
-        // UWAGA: W poprzednim kodzie były eventy, które przy zablokowaniu robiły e.preventDefault(). Teraz usuwamy całkowicie to nasłuchiwanie.
-        // Nie będziemy dodawać żadnych event listenerów do przycisków, aby nie ingerować w domyślne zachowanie linków.
-        // Jednocześnie chcemy zachować funkcjonalność live statusu oraz licznik jako statyczny lub dynamiczny opcjonalnie.
-        // Dla porządku, jeśli ktoś chce żeby licznik się aktualizował (zmniejszał) przy każdym kliknięciu, to mogłoby być mylące, ponieważ 
-        // użytkownik klika wiele razy a miejsca ubywają. Lepiej pozostawić licznik jako informację o początkowym limicie, nieaktualizowany.
-        // Jednak w treści oryginalnej był licznik, który się zmniejszał. Najlepiej dostosować: pozostawiamy licznik bez zmiany po kliknięciu.
-        // Wyrzucamy więc całkowicie logikę, która modyfikowała localStorage i blokowała linki.
-        // Aby zachować "nic wiecej nie ruszaj" - pozostawiamy tylko aktualizację statusu kick, bez żadnych zmian w linkach.
-        // Dla bezpieczeństwa usuwamy ewentualne pozostałości po poprzednim skrypcie (nadpisanie).
+        function updateCounter400() {
+            if (counter400Span) counter400Span.innerText = remaining400;
+            if (progressBar400) {
+                const percent = (remaining400 / 50) * 100;
+                progressBar400.style.width = percent + '%';
+            }
+        }
         
-        // Ponieważ w skrypcie poniżej były funkcje, które dodawały eventy do .bonus-main-btn, usuwamy je całkowicie.
-        // Nadpisujemy zawartość skryptu, aby nie było żadnych nasłuchiwań.
+        updateCounter200();
+        updateCounter400();
         
-        // Na nowo definiujemy skrypt: tylko live status oraz czysty licznik (bez modyfikacji po kliknięciu).
-        // UWAGA: W tym momencie w przeglądarce istnieją już elementy, ale my nie dodajemy żadnych nowych listenerów.
-        // Usuwamy istniejące eventy przez zastąpienie kodu.
-        
-        // Ponowne zabezpieczenie: nie tworzymy żadnych odwołań do .bonus-main-btn w kontekście blokowania.
-        // Pozostaje tylko funkcja do live statusu.
-        
-        // Dla kompletności, jeśli wcześniej były dodane atrybuty onclick lub cokolwiek - nie ma, bo były dodane przez JS.
-        // Teraz po odświeżeniu kodu, nie ma żadnych dodatkowych listenerów. Linki działają domyślnie.
-        
-        // Odświeżenie licznika - brak modyfikacji przy kliknięciu.
-        // Licznik wyświetla wartość początkową 100 i nie zmienia się. Można też zrobić, że pozostaje statyczny.
-        // Ale aby zachować ideę "limitu", ustawiamy, że nie modyfikujemy go w ogóle przez JS kliknięcia.
-        // Ewentualnie, jeżeli ktoś chce, żeby licznik nie był sztywny, to niech tak pozostanie - nie ruszamy nic więcej.
-        // Upewniamy się, że żaden kod nie ingeruje w linki.
-        
-        // LIVE STATUS (kick) - bez zmian
         async function checkKickLiveStatus() {
             const liveStatus = document.getElementById('liveStatus');
             const statusText = document.querySelector('.status-text');
@@ -730,13 +759,13 @@
                 statusText.textContent = 'OFFLINE';
             }
         }
-        document.addEventListener('DOMContentLoaded', checkKickLiveStatus);
-        setInterval(checkKickLiveStatus, 60000);
         
-        // Dodatkowe: upewniamy się, że żadne inne skrypty nie modyfikują zachowania linków. 
-        // Dla bezpieczeństwa usuwamy potencjalne atrybuty onclick z przycisków (jeśli jakieś zostały w HTML - brak)
-        // Wszystkie linki mają standardowe href, działają zawsze.
-        console.log("Linki bonusowe działają bez ograniczeń - każdy klik otwiera stronę docelową.");
+        document.addEventListener('DOMContentLoaded', () => {
+            checkKickLiveStatus();
+            setInterval(checkKickLiveStatus, 60000);
+        });
+        
+        console.log("Liczniki 200/400 PLN. Aby zmienić wartości początkowe, edytuj START_200 i START_400 w skrypcie.");
     </script>
 </body>
 </html>
